@@ -56,8 +56,8 @@ Library
     --Math.HiddenMarkovModel.Example.TrafficLight
     --Math.HiddenMarkovModel.Example.SineWave
     --Math.HiddenMarkovModel.Example.Circle
-  Other-Modules:
     Math.HiddenMarkovModel.Normalized
+  Other-Modules:
     Math.HiddenMarkovModel.Private
     Math.HiddenMarkovModel.Utility
     Math.HiddenMarkovModel.CSV
