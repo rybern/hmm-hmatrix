@@ -9,6 +9,7 @@ module Math.HiddenMarkovModel (
    probabilitySequence,
    Normalized.logLikelihood,
    Normalized.reveal,
+   Normalized.posterior,
 
    Trained(..),
    trainSupervised,

@@ -30,6 +30,16 @@ import qualified Data.List as List
 import Data.Traversable (Traversable, mapAccumL)
 import Data.Tuple.HT (mapFst, mapSnd, swap)
 
+posterior ::
+   (Distr.EmissionProb distr,
+    Distr.Probability distr ~ prob, Distr.Emission distr ~ emission,
+    Traversable f, NonEmptyC.Zip f, NonEmptyC.Reverse f) =>
+   T distr prob ->
+   NonEmpty.T f emission ->
+   NonEmpty.T f (Vector prob)
+posterior hmm xs = fmap normalizeProb $ zetaFromAlphaBeta alphas betas
+  where (alphas, betas) = alphaBeta hmm xs
+
 
 {- |
 Logarithm of the likelihood to observe the given sequence.
